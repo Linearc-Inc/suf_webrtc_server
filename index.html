@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartup Webconfrence</title>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+</head>
+<body>
+    <div id="selectRoom">
+        <label>Type the room number</label>
+        <input id="roomNumber" type="text" />
+        <button id="createRoom">Go</button>
+        <button id="joinRoom">Join</button>
+    </div>
+
+    <div id="consultingRoom" style="display:none">
+        <video width="300px" muted id="ScreenVideo" autoplay></video>
+        <video height="300px" id="CameraVideo" autoplay></video>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>

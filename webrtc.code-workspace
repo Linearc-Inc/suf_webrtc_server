@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../server"
+		},
+		{
+			"path": "../webrtc_public"
+		},
+		{
+			"path": "../webrtc_server"
+		},
+		{
+			"path": "../peer"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "public"
+	}
+}
