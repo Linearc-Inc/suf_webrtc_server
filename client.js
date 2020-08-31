@@ -31,17 +31,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
             ourscreen = stream
         })
 
+        console.log("got user data")
         peer.on('connection', function (conn) {
+            console.log('making camera call')
             let cameracall = peer.call(conn.peer, ourcamera, {
                 metadata: JSON.stringify({
                     type: "camera"
                 })
             });
+            console.log('making screen call')
             let screencall = peer.call(conn.peer, ourscreen, {
                 metadata: JSON.stringify({
                     type: "screen"
                 })
             });
+
         });
 
     })
@@ -55,6 +59,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let conn = this.connect(channel_id.value);
 
             peer.on('call', function (call) {
+                console.log('recieving call from host',JSON.parse(call.metadata).type)
                 call.answer();
                 call.on('stream', function (stream) {
                     let source = (JSON.parse(call.metadata).type)
