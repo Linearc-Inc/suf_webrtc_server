@@ -11,7 +11,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
     createBroadcastBtn.addEventListener('click', function (e) {
-        let peer = new Peer(channel_id.value);
+        let peer = new Peer(channel_id.value,{
+            config: {
+                'iceServers': [{
+                        url: 'stun:stun.l.google.com:19302'
+                    },
+                    {
+                        url: 'turn:numb.viagenie.ca:3478',
+                        credential: 'muazkh',
+                        username: 'web...@live.com'
+                    },
+                    {
+                        url: 'turn:numb.viagenie.ca',
+                        credential: 'muazkh',
+                        username: 'web...@live.com'
+                    },
+                    {
+                        url: 'turn:192.158.29.39:3478?transport=udp',
+                        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+                        username: '28224511:1379330808'
+                    },
+                    {
+                        url: 'turn:192.158.29.39:3478?transport=tcp',
+                        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+                        username: '28224511:1379330808'
+                    }
+                ]
+            }
+        });
 
         peer.on('open', function (id) {
             console.log('My peer ID is: ' + id);
@@ -52,21 +79,58 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
     viewBtn.addEventListener('click', function (e) {
-        let peer = new Peer();
+        let peer = new Peer({
+            config: {
+                'iceServers': [{
+                        url: 'stun:stun.l.google.com:19302'
+                    },
+                    {
+                        url: 'turn:numb.viagenie.ca:3478',
+                        credential: 'muazkh',
+                        username: 'web...@live.com'
+                    },
+                    {
+                        url: 'turn:numb.viagenie.ca',
+                        credential: 'muazkh',
+                        username: 'web...@live.com'
+                    },
+                    {
+                        url: 'turn:192.158.29.39:3478?transport=udp',
+                        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+                        username: '28224511:1379330808'
+                    },
+                    {
+                        url: 'turn:192.158.29.39:3478?transport=tcp',
+                        credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+                        username: '28224511:1379330808'
+                    }
+                ]
+            }
+        });
 
         peer.on('open', function (id) {
             console.log('My peer ID is: ' + id);
             let conn = this.connect(channel_id.value);
 
             peer.on('call', function (call) {
-                console.log('recieving call from host',JSON.parse(call.metadata).type)
+                console.log('recieving call from host', JSON.parse(call.metadata).type)
+                console.log(call)
                 call.answer();
                 call.on('stream', function (stream) {
+                    console.log(stream)
                     let source = (JSON.parse(call.metadata).type)
                     if (source == "camera") {
                         camerasource.srcObject = stream;
+                        console.log(camerasource)
+                        camerasource.onloadedmetadata = function (e) {
+                            camerasource.play();
+                        }
                     } else {
                         screensource.srcObject = stream;
+                        console.log(camerasource)
+                        screensource.onloadedmetadata = function (e) {
+                            screensource.play();
+                        }
                     }
                 });
             });
