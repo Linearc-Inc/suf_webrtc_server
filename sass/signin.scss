@@ -1,0 +1,37 @@
+
+.signin-page{
+
+display: flex;
+justify-content: center;
+align-items: flex-start;
+height: 80vh;
+flex-direction: column;
+padding: 40px;
+min-width: 50%;
+.back-button{
+    i{
+        padding-right: 10px;
+    }
+}
+
+h4{
+    padding-top: 20px;
+}
+
+.form-parent{
+    padding-top: 20px;
+    padding-left: 100px;
+    min-width: 498px;
+.login-form{
+    display: flex;
+    flex-direction: column;
+    .btn-primary{
+        flex-grow: 0;
+        flex-shrink: 1;
+        width: 40%;
+        align-self: flex-end;
+    }
+}
+}
+
+}

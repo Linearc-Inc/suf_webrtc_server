@@ -1,0 +1,54 @@
+.signin-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 80vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px;
+  min-width: 50%;
+}
+
+.signin-page .back-button i {
+  padding-right: 10px;
+}
+
+.signin-page h4 {
+  padding-top: 20px;
+}
+
+.signin-page .form-parent {
+  padding-top: 20px;
+  padding-left: 100px;
+  min-width: 498px;
+}
+
+.signin-page .form-parent .login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signin-page .form-parent .login-form .btn-primary {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  width: 40%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+/*# sourceMappingURL=signin.css.map */
