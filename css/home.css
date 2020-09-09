@@ -1,0 +1,29 @@
+.heading {
+  padding-bottom: 50px;
+}
+
+nav.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav.nav-menu ul {
+  list-style: none;
+  text-decoration: unset;
+}
+
+nav.nav-menu ul li a {
+  text-decoration: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  border: 1px solid grey;
+  border-radius: 0.2em;
+  padding: 10px 30px;
+}
+/*# sourceMappingURL=home.css.map */

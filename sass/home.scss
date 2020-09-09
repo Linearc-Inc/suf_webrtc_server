@@ -1,0 +1,24 @@
+.heading{
+    padding-bottom:50px;
+}
+
+nav.nav-menu{
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+    ul{
+        list-style: none;
+        text-decoration: unset;
+        li{
+
+            a{
+                text-decoration: unset;
+                box-sizing: border-box;
+                display: block;
+                border: 1px solid grey;
+                border-radius: 0.2em;
+                padding: 10px 30px;
+            }
+        }
+    }
+}
